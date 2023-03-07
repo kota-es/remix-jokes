@@ -4,7 +4,7 @@ import { useLoaderData, Link } from "@remix-run/react"
 
 import { db } from "~/utils/db.server"
 
-export const loader =async () => {
+export const loader = async () => {
   const count = await db.joke.count();
   const randomRowNumber = Math.floor(Math.random() * count);
   const [randomJoke] = await db.joke.findMany({
